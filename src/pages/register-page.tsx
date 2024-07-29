@@ -45,7 +45,7 @@ const formSchema = z
     }),
     confirmPassword: z.string().min(8),
   })
-  .refine(data => data.password === data.confirmPassword, {
+  .refine((data) => data.password === data.confirmPassword, {
     message: "Passwords do not match",
     path: ["confirmPassword"], // Error path
   });
@@ -165,7 +165,7 @@ function RegisterPage() {
                         />
                         <span
                           className="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer text-gray-500"
-                          onClick={() => setShowPassword(prev => !prev)}
+                          onClick={() => setShowPassword((prev) => !prev)}
                         >
                           {showPassword ? (
                             <EyeOff className="h-4 w-4" />
@@ -198,7 +198,7 @@ function RegisterPage() {
                         />
                         <span
                           className="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer text-gray-500"
-                          onClick={() => setShowPassword(prev => !prev)}
+                          onClick={() => setShowPassword((prev) => !prev)}
                         >
                           {showPassword ? (
                             <EyeOff className="h-4 w-4" />
